@@ -4,6 +4,8 @@ This project was created by Imran Hafizuddin in a technical assessment for Quick
 
 Website for the application: https://queueticketingapp-b29b0.web.app
 
+The code for Question A. is included in the repo under file named: Question A. Build Queueing Classes.docx
+
 Requirements of the project were as follows:
 
 Build a simple queue ticketing application
