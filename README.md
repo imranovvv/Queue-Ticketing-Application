@@ -6,6 +6,8 @@ Website for the application: https://queueticketingapp-b29b0.web.app
 
 The code for Question A. is included in the repo under file named: Question A. Build Queueing Classes.docx
 
+The code for Question B. is included inside the public folder, with two files, index.html and scripts.js
+
 Requirements of the project were as follows:
 
 Build a simple queue ticketing application
