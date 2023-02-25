@@ -9,57 +9,58 @@
     <h1>
         Customer View 
     </h1>
-    <div style="text-align: center;">
-        <p>Now Serving</p>
-        <p id="now-serving"></p>
-        <p>Last Number</p>
-        <p id="last-number"></p>
-        <button class="btn btn-primary" id="take-number-btn" >Take a Number</button>
+    <div class="container overflow-hidden text-center">
+        <div >Now Serving</div>
+        <div id="now-serving">-</div>
+        <div>Last Number</div>
+        <div id="last-number">-</div>
+        <div>
+          <button class="btn btn-primary" id="take-number-btn" >Take a Number</button>
+        </div>
     </div>
 <br>
-      <div class="container overflow-hidden text-center">
-        <div class="row gx-5">
-          <div class="col">
-           <div class="status-counter p-3 bg-primary position-absolute">
-            Counter 1
-            <p class="current-number"></p>
-            <span class="status-circle position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle">
-            </div>
-          </div>
-          <div class="col">
-            <div class="status-counter p-3 bg-primary position-absolute">
-              Counter 2
-              <p class="current-number"></p>
-              <span class="status-circle position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle">
-            </div>
-          </div>
-          <div class="col">
-            <div class="status-counter p-3 bg-primary position-absolute">
-              Counter 3
-              <p class="current-number"></p>
-               <span class="status-circle position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle">
-            </div>
-          </div>
-          <div class="col">
-            <div class="status-counter p-3 bg-primary position-absolute">
-              Counter 4
-              <p class="current-number"></p>
-              <span class="status-circle position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle">
-            </div>
-          </div>
-        </div>
+<div class="container text-center">
+  <div class="row gx-5">
+    <div class="col">
+     <div class="status-counter p-3 bg-primary text-white position-relative">
+      Counter 1
+      <span class="status-circle position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle"></span>
+      <div class="current-number">-</div>
+     </div>
+    </div>
+    <div class="col">
+      <div class="status-counter p-3 bg-primary text-white position-relative">
+        Counter 2
+        <span class="status-circle position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle"></span>
+        <div class="current-number">-</div>
       </div>
-      <br><br><br><br><br>
+    </div>
+    <div class="col">
+      <div class="status-counter p-3 bg-primary text-white position-relative">
+        Counter 3
+        <span class="status-circle position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle"></span>
+        <div class="current-number">-</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="status-counter p-3 bg-primary text-white position-relative">
+        Counter 4
+        <span class="status-circle position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle"></span>
+        <div class="current-number">-</div>
+      </div>
+    </div>
+  </div>
+</div> 
+      <br>
 <h1>Counter Management</h1>
       <div class="row">
-        <div class="col-sm-3 mb-3 mb-sm-0">
+        <div class="col-sm-3">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Counter 1</h5>
-              <p class="card-text"></p>
-              <button class="go-offline btn btn-primary" >Go offline</button>
-              <button class="complete-current btn btn-primary">Complete current</button>
-              <button class="call-next btn btn-primary">Call next</button>
+              <button class="go-offline-btn btn btn-primary" >Go offline</button>
+              <button class="complete-current-btn btn btn-primary">Complete current</button>
+              <button class="call-next-btn btn btn-primary">Call next</button>
               </div>
           </div>
         </div>
@@ -67,9 +68,9 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Counter 2</h5>
-              <button class="go-offline btn btn-primary">Go offline</button>
-              <button class="complete-current btn btn-primary">Complete current</button>
-              <button class="call-next btn btn-primary">Call next</button>
+              <button class="go-offline-btn btn btn-primary">Go offline</button>
+              <button class="complete-current-btn btn btn-primary">Complete current</button>
+              <button class="call-next-btn btn btn-primary">Call next</button>
               </div>
           </div>
         </div>
@@ -77,9 +78,9 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Counter 3</h5>
-              <button class="go-offline btn btn-primary">Go offline</button>
-              <button class="complete-current btn btn-primary">Complete current</button>
-              <button class="call-next btn btn-primary">Call next</button>
+              <button class="go-offline-btn btn btn-primary">Go offline</button>
+              <button class="complete-current-btn btn btn-primary">Complete current</button>
+              <button class="call-next-btn btn btn-primary">Call next</button>
             </div>
           </div>
         </div>
@@ -87,9 +88,9 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Counter 4</h5>
-              <button class="go-offline btn btn-primary">Go offline</button>
-              <button class="complete-current btn btn-primary">Complete current</button>
-              <button class="call-next btn btn-primary">Call next</button>
+              <button class="go-offline-btn btn btn-primary">Go offline</button>
+              <button class="complete-current-btn btn btn-primary">Complete current</button>
+              <button class="call-next-btn btn btn-primary">Call next</button>
             </div>
           </div>
         </div>

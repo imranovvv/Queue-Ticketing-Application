@@ -1,89 +1,98 @@
 // Define the queue of waiting tickets
 let queue = [];
 
-// VARIABLES TO CONNECT WITH HTML ELEMENTS
-let takeNumberBtn=document.getElementById("take-number-btn");
-let callNext=document.querySelectorAll(".call-next");
+// Now Serving/Last Number element in HTML
 let nowServing=document.getElementById("now-serving");
-let completeCurrentButtons = document.querySelectorAll('.complete-current');
-let goOffline=document.querySelectorAll('.go-offline');
-let statusCounter = document.querySelectorAll('.status-counter');
-let statusCircle = document.querySelectorAll('.status-circle');
-let isServing=false;
 let currentNumber=document.querySelectorAll(".current-number");
 
+// Button elements in HTML
+let takeNumberButton=document.getElementById("take-number-btn");
+let callNextButton=document.querySelectorAll(".call-next-btn");
+let completeCurrentButton = document.querySelectorAll('.complete-current-btn');
+let goOfflineButton=document.querySelectorAll('.go-offline-btn');
 
-// COMPLETE CURRENT BUTTON 
-for (let i = 0; i < completeCurrentButtons.length; i++) {
-  //only if serving customer, can you complete current customer
-  if(!isServing){
-    completeCurrentButtons[i].addEventListener('click', () => {
-      statusCircle[i].classList.replace('bg-danger', 'bg-success');
-  });
-  }
-   
-  };
+// Status circle and status counter(offline/online) elements in HTML
+let statusCounter = document.querySelectorAll('.status-counter');
+let statusCircle = document.querySelectorAll('.status-circle');
 
+// boolean to know if counter is currently serving a customer
+let isServing=false;
 
+// TAKE NUMBER BUTTON
+takeNumberButton.addEventListener('click', () => {
 
+  let lastNumber=document.getElementById("last-number");
+      // Generate a new ticket number
+      const newTicket = queue.length + 1;
+  
+      // Add the new ticket to the end of the queue
+      queue.push(newTicket);
+  
+      // Display the ticket number to the customer
+      alert(`Your ticket number is ${newTicket}`);
+      lastNumber.innerHTML=newTicket;
+      return newTicket;
+    });
 
 // CALL NEXT CUSTOMER BUTTON
-for (let i = 0; i < callNext.length; i++) {
-    callNext[i].addEventListener('click', () => {
-        var a;
-        if(queue[0]==undefined){
-            alert(`No tickets in waiting queue`);
-        }else{
-        a=currentNumber[i].innerHTML=queue.shift();
-        nowServing.innerHTML=a;
-        alert(`Calling next customer ${a}`);
-        statusCircle[i].classList.replace("bg-success", "bg-danger");
-        isServing=true;
-        }
-        
-    });
+for (let i = 0; i < callNextButton.length; i++) {
+  callNextButton[i].addEventListener('click', () => {
+      var a;
+      if(queue[0]==undefined){
+          alert(`No tickets in waiting queue`);
+      }else{
+      a=currentNumber[i].innerHTML=queue.shift();
+      nowServing.innerHTML=a;
+      alert(`Calling next customer: ${a}`);
+      statusCircle[i].classList.replace("bg-success", "bg-danger");
+      isServing=true;
+      }
+  });
+};
+
+// COMPLETE CURRENT BUTTON 
+for (let i = 0; i < completeCurrentButton.length; i++) {
+    completeCurrentButton[i].addEventListener('click', () => {
+        //Only if serving customer, can you complete current customer
+      if(isServing){
+      statusCircle[i].classList.replace('bg-danger', 'bg-success');
+      alert('Completed current ticket!')
+      }else{
+        alert('There is no ticket to complete!')
+      }
+  });
   };
 
-
 // GO OFFLINE/ONLINE BUTTON
-  for (let i = 0; i < goOffline.length; i++) {
+  for (let i = 0; i < goOfflineButton.length; i++) {
     let isOffline = false;
   
-    goOffline[i].addEventListener('click', () => {
+    goOfflineButton[i].addEventListener('click', () => {
       if (isOffline) {
         // Counter is currently offline, so go online
         isOffline = false;
-        goOffline[i].innerHTML = 'Go Offline';
+        goOfflineButton[i].innerHTML = 'Go Offline';
         statusCircle[i].classList.replace('bg-secondary', 'bg-success');
         statusCounter[i].classList.replace('bg-secondary', 'bg-primary');
-        currentNumber[i].innerHTML="";
+        currentNumber[i].innerHTML="-";
+        // Enable both buttons
+        completeCurrentButton[i].classList.remove("disabled");
+        callNextButton[i].classList.remove("disabled");
       } else {
         // Counter is currently online, so go offline
         isOffline = true;
-        goOffline[i].innerHTML = 'Go Online';
+        goOfflineButton[i].innerHTML = 'Go Online';
         statusCircle[i].classList.replace('bg-success', 'bg-secondary');
         statusCounter[i].classList.replace('bg-primary', 'bg-secondary');
         currentNumber[i].innerHTML="Offline";
+        // Disable both buttons
+        completeCurrentButton[i].classList.add("disabled");
+        callNextButton[i].classList.add("disabled");
       }
     });
   }
 
-// TAKE NUMBER BUTTON
 
-takeNumberBtn.addEventListener('click', () => {
-
-let lastNumber=document.getElementById("last-number");
-    // Generate a new ticket number
-    const newTicket = queue.length + 1;
-
-    // Add the new ticket to the end of the queue
-    queue.push(newTicket);
-
-    // Display the ticket number to the customer
-    alert(`Your ticket number is ${newTicket}`);
-    lastNumber.innerHTML=newTicket;
-    return newTicket;
-  });
 
 
 
