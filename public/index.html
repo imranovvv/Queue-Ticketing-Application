@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script type="text/javascript" src="scripts.js" defer></script>
+  </head>
+<body>
+    <h1>
+        Customer View 
+    </h1>
+    <div style="text-align: center;">
+        <p>Now Serving</p>
+        <p id="now-serving"></p>
+        <p>Last Number</p>
+        <p id="last-number"></p>
+        <button class="btn btn-primary" id="take-number-btn" >Take a Number</button>
+    </div>
+<br>
+      <div class="container overflow-hidden text-center">
+        <div class="row gx-5">
+          <div class="col">
+           <div class="status-counter p-3 bg-primary position-absolute">
+            Counter 1
+            <p class="current-number"></p>
+            <span class="status-circle position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle">
+            </div>
+          </div>
+          <div class="col">
+            <div class="status-counter p-3 bg-primary position-absolute">
+              Counter 2
+              <p class="current-number"></p>
+              <span class="status-circle position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle">
+            </div>
+          </div>
+          <div class="col">
+            <div class="status-counter p-3 bg-primary position-absolute">
+              Counter 3
+              <p class="current-number"></p>
+               <span class="status-circle position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle">
+            </div>
+          </div>
+          <div class="col">
+            <div class="status-counter p-3 bg-primary position-absolute">
+              Counter 4
+              <p class="current-number"></p>
+              <span class="status-circle position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle">
+            </div>
+          </div>
+        </div>
+      </div>
+      <br><br><br><br><br>
+<h1>Counter Management</h1>
+      <div class="row">
+        <div class="col-sm-3 mb-3 mb-sm-0">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Counter 1</h5>
+              <p class="card-text"></p>
+              <button class="go-offline btn btn-primary" >Go offline</button>
+              <button class="complete-current btn btn-primary">Complete current</button>
+              <button class="call-next btn btn-primary">Call next</button>
+              </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Counter 2</h5>
+              <button class="go-offline btn btn-primary">Go offline</button>
+              <button class="complete-current btn btn-primary">Complete current</button>
+              <button class="call-next btn btn-primary">Call next</button>
+              </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Counter 3</h5>
+              <button class="go-offline btn btn-primary">Go offline</button>
+              <button class="complete-current btn btn-primary">Complete current</button>
+              <button class="call-next btn btn-primary">Call next</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Counter 4</h5>
+              <button class="go-offline btn btn-primary">Go offline</button>
+              <button class="complete-current btn btn-primary">Complete current</button>
+              <button class="call-next btn btn-primary">Call next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+      <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyC6d4kc6Lek6NCyt7sm8sdZwr2GkDlH3Cw",
+          authDomain: "queueticketingapp-b29b0.firebaseapp.com",
+          projectId: "queueticketingapp-b29b0",
+          storageBucket: "queueticketingapp-b29b0.appspot.com",
+          messagingSenderId: "195054221042",
+          appId: "1:195054221042:web:3a8ec2c29055deee2a026b"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+      </script>
+</body>
+</html>
