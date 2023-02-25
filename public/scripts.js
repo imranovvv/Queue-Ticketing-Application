@@ -57,6 +57,7 @@ for (let i = 0; i < completeCurrentButton.length; i++) {
       if(isServing){
       statusCircle[i].classList.replace('bg-danger', 'bg-success');
       alert('Completed current ticket!')
+      isServing=false;
       }else{
         alert('There is no ticket to complete!')
       }
