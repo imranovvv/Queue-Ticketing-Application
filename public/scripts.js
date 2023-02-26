@@ -16,22 +16,25 @@ let statusCounter = document.querySelectorAll('.status-counter');
 let statusCircle = document.querySelectorAll('.status-circle');
 
 // boolean to know if counter is currently serving a customer
-let isServing=false;
+let lastPreviousNumber=1;
+
+let isServing=[false,false,false,false];
+let newTicket=0;
 
 // TAKE NUMBER BUTTON
+
 takeNumberButton.addEventListener('click', () => {
 
   let lastNumber=document.getElementById("last-number");
       // Generate a new ticket number
-      const newTicket = queue.length + 1;
-  
+      
+      newTicket++;
       // Add the new ticket to the end of the queue
       queue.push(newTicket);
   
       // Display the ticket number to the customer
       alert(`Your ticket number is ${newTicket}`);
       lastNumber.innerHTML=newTicket;
-      return newTicket;
     });
 
 // CALL NEXT CUSTOMER BUTTON
@@ -45,7 +48,9 @@ for (let i = 0; i < callNextButton.length; i++) {
       nowServing.innerHTML=a;
       alert(`Calling next customer: ${a}`);
       statusCircle[i].classList.replace("bg-success", "bg-danger");
-      isServing=true;
+      isServing[i]=true;
+      callNextButton[i].classList.add("disabled");
+      goOfflineButton[i].classList.add("disabled");
       }
   });
 };
@@ -54,10 +59,12 @@ for (let i = 0; i < callNextButton.length; i++) {
 for (let i = 0; i < completeCurrentButton.length; i++) {
     completeCurrentButton[i].addEventListener('click', () => {
         //Only if serving customer, can you complete current customer
-      if(isServing){
+      if(isServing[i]){
       statusCircle[i].classList.replace('bg-danger', 'bg-success');
       alert('Completed current ticket!')
-      isServing=false;
+      isServing[i]=false;
+      callNextButton[i].classList.remove("disabled");
+      goOfflineButton[i].classList.remove("disabled");
       }else{
         alert('There is no ticket to complete!')
       }
