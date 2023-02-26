@@ -1,0 +1,23 @@
+.rcorners {
+    border-radius: 25px;
+    border: 2px solid black;
+    margin: 20px;
+    padding: 20px; 
+    width: 200px;
+    height: 150px;  
+  }
+
+.rcorners2 {
+    border-radius: 25px;
+    border: 2px solid black;
+    background: #BDCDD6;
+    padding: 20px; 
+    margin: 20px;
+    width: 200px;
+    height: 150px; 
+  }
+
+p{
+    color: black;
+}
+

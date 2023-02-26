@@ -27,7 +27,7 @@ takeNumberButton.addEventListener('click', () => {
 
   let lastNumber=document.getElementById("last-number");
       // Generate a new ticket number
-      
+
       newTicket++;
       // Add the new ticket to the end of the queue
       queue.push(newTicket);
@@ -81,7 +81,7 @@ for (let i = 0; i < completeCurrentButton.length; i++) {
         isOffline = false;
         goOfflineButton[i].innerHTML = 'Go Offline';
         statusCircle[i].classList.replace('bg-secondary', 'bg-success');
-        statusCounter[i].classList.replace('bg-secondary', 'bg-primary');
+        statusCounter[i].classList.replace('rcorners2', 'rcorners');
         currentNumber[i].innerHTML="-";
         // Enable both buttons
         completeCurrentButton[i].classList.remove("disabled");
@@ -91,7 +91,7 @@ for (let i = 0; i < completeCurrentButton.length; i++) {
         isOffline = true;
         goOfflineButton[i].innerHTML = 'Go Online';
         statusCircle[i].classList.replace('bg-success', 'bg-secondary');
-        statusCounter[i].classList.replace('bg-primary', 'bg-secondary');
+        statusCounter[i].classList.replace('rcorners', 'rcorners2');
         currentNumber[i].innerHTML="Offline";
         // Disable both buttons
         completeCurrentButton[i].classList.add("disabled");
