@@ -1,6 +1,6 @@
 # Queue-Ticketing-Application
 
-This project was created by Imran Hafizuddin in a technical assessment for QuickDesk
+This project was created by Imran Hafizuddin in a technical assessment
 
 Website for the application: https://queueticketingapp-b29b0.web.app
 
